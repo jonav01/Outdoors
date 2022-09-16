@@ -1,0 +1,53 @@
+@use '../abstracts' as color ;
+@use '../base/animations';
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(color.$color-primary-light, 0.792),
+        rgba(color.$color-primary-dark, 0.792)
+      ),
+      url("../assets/images/bodyImg.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0%, 100% 81%, 0% 100%);
+    text-align: center; 
+  
+    &__img-box {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+  }
+  
+  .logo {
+    height: 45px;
+  }
+  
+  .body-text {
+    position: absolute;
+    color: #fff;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: red; */
+    &-main {
+      display: block;
+      font-size: 9.4rem;
+      font-weight: 300;
+      letter-spacing: 20px;
+      animation-name: moveInLeft;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+    }
+    &-sub {
+      display: block;
+      font-size: 20px;
+      letter-spacing: 21.8px;
+      animation-name: moveInRight;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      margin-bottom: 60px;
+    }
+  }

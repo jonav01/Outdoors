@@ -1,0 +1,32 @@
+@use "../abstracts/index" as color;
+
+.feature-box {
+  background-color: rgba(color.$color-white, 0.8);
+  padding: 2.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba(color.$color-black, 0.15);
+  transition: transform 0.2s;
+  &__text {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  &__icon {
+    font-size: 4.3rem;
+    background-image: linear-gradient(
+      to right,
+      color.$color-primary-light,
+      color.$color-primary-dark
+    );
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  &:hover {
+    transform: translateY(-1rem) scale(1.1);
+    box-shadow: 0 1.5rem 4rem rgba(color.$color-black, 0.15);
+  }
+}

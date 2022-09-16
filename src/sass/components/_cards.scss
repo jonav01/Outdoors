@@ -1,0 +1,163 @@
+@use "../abstracts/index" as color;
+
+.cards {
+  margin-top: 5rem;
+  position: relative;
+  perspective: 200rem;
+  height: 45rem;
+  &__side {
+    height: 45rem;
+    width: 100%;
+    transition: transform 1.2s;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 1.5rem 4rem rgba(color.$color-black, 0.15);
+    &--back {
+      transform: rotateY(180deg);
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          color.$color-secondary-light,
+          color.$color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          color.$color-primary-light,
+          color.$color-primary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          color.$color-tertiary-light,
+          color.$color-tertiary-dark
+        );
+      }
+    }
+    &--front {
+      background-color: color.$color-white;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__picture {
+    background-size: cover;
+    height: 18rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          color.$color-secondary-light,
+          color.$color-secondary-dark
+        ),
+        url("../assets/images/cardImg1.jpg");
+    }
+    &--2 {
+      background-image:linear-gradient(
+        to right bottom,
+        color.$color-primary-light,
+        color.$color-primary-dark
+      ), 
+      url("../assets/images/cardImg2.jpg");
+    }
+    &--3 {
+      background-image:linear-gradient(
+        to right bottom,
+        color.$color-tertiary-light,
+        color.$color-tertiary-dark
+      ),
+       url("../assets/images/cardImg3.jpg");
+    }
+  }
+  &__heading {
+    font-size: 2.3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: color.$color-white;
+    position: absolute;
+    top: 10rem;
+    right: 1rem;
+    text-align: right;
+    width: 75%;
+  }
+  &__heading--span {
+    padding: 1rem 1rem;
+    -webkit-box-decoration-break: clone;
+    &-1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(color.$color-secondary-light, 0.7),
+        rgba(color.$color-secondary-dark, 0.8)
+      );
+    }
+    &-2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(color.$color-primary-light, 0.7),
+        rgba(color.$color-primary-dark, 0.8)
+      );
+    }
+    &-3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(color.$color-tertiary-light, 0.7),
+        rgba(color.$color-tertiary-dark, 0.8)
+      );
+    }
+  }
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid color.$color-grey-dark-2;
+        }
+      }
+    }
+  }
+
+  // Back-side styling
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    margin-bottom: 10rem;
+    color: color.$color-white;
+  }
+
+  &__price-only {
+    font-size: 1.5rem;
+  }
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+}

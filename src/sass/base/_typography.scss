@@ -1,0 +1,38 @@
+@use "../abstracts/index" as abs;
+
+.heading-secondary {
+  font-size: 2.5rem;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(
+    to right,
+    abs.$color-primary-light,
+    abs.$color-primary-dark
+  ); 
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: skewX(10deg) skewY(5deg);
+    text-shadow: 0.5rem 1rem 2rem rgba(abs.$color-black, 0.3);
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+
